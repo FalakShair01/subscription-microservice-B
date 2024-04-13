@@ -49,7 +49,7 @@ subscription_microservice/
 
 ## Setup
 
-1. **Clone the Repository**: `git clone https://github.com/your-username/subscription_microservice.git`
+1. **Clone the Repository**: `git clone https://github.com/FalakShair01/subscription-microservice-B.git`
 2. **Navigate to the Project Directory**: `cd subscription-microservice-B`
 3. **Create a Virtual Environment**: `python3 -m venv venv`
 4. **Activate the Virtual Environment**:
