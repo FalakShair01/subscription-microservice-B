@@ -1,3 +1,4 @@
+"""This file contain the routers"""
 from fastapi import APIRouter, Depends, HTTPException
 from config.database import get_db
 from sqlalchemy.orm import Session
@@ -56,3 +57,4 @@ async def delete_subscription(subscription_id: int, db: Session = Depends(get_db
     
     subscription_service.delete_subscription(db, subscription)
     return {"message": "Subscription deleted successfully"}
+

@@ -1,3 +1,5 @@
+"""This File contains the Business logic or crud functionality"""
+
 from sqlalchemy.orm import Session
 from model import models
 from fastapi import HTTPException
