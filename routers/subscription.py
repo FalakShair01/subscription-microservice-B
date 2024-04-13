@@ -4,7 +4,7 @@ from sqlalchemy.orm import Session
 from schemas import schema
 from dependencies import subscription_service
 
-router = APIRouter(tags=['Sevice A'])
+router = APIRouter(tags=['Sevice B'])
 
 @router.get("/subscriptions", response_model=list[schema.Subscription], summary="Get all subscriptions")
 async def get_all_subscriptions(db: Session = Depends(get_db)):
