@@ -4,6 +4,7 @@ from config.database import engine
 from model import models
 from routers import subscription
 from rabbitmq.consumer import RabbitMQConsumer
+from asyncio import create_task
 
 
 models.Base.metadata.create_all(bind=engine)
@@ -19,4 +20,4 @@ async def root():
 
 @app.on_event("startup")
 async def startup_event():
-    rabbitmq.start_consuming()
+    create_task(rabbitmq.start_consuming())
