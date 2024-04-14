@@ -3,7 +3,9 @@ from main import app
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 from model import models
-from config.database import Base, SQLALCHEMY_DATABASE_URL
+from config.database import Base
+
+SQLALCHEMY_DATABASE_URL = "sqlite:///./test.db"
 
 # Create an in-memory SQLite database for testing
 engine = create_engine(SQLALCHEMY_DATABASE_URL, connect_args={"check_same_thread": False})
@@ -46,7 +48,7 @@ def test_get_all_subscriptions():
 def test_update_subscription():
     # Create a test subscription
     db = TestingSessionLocal()
-    subscription = models.Subscription(email="test@example.com", is_active=True)
+    subscription = models.Subscription(email="testtest@example.com", is_active=True)
     db.add(subscription)
     db.commit()
 
