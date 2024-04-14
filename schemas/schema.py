@@ -13,3 +13,6 @@ class Subscription(SubscriptionBase):
     class Config:
         orm_mode = True
 
+
+class UpdateSubscription(BaseModel):    
+    is_active: bool

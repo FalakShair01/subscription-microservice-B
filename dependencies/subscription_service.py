@@ -30,17 +30,15 @@ def get_subscription_by_id(db: Session, subscription_id: int):
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
 
-def update_subscription(db: Session, subscription: models.Subscription, email: str, is_active: bool):
+def update_subscription(db: Session, subscription: models.Subscription, is_active: bool):
     """Update a subscription."""
     try:
-        subscription.email = email
         subscription.is_active = is_active
         db.commit()
         db.refresh(subscription)
         return subscription
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
-    
 
 def delete_subscription(db: Session, subscription: models.Subscription):
     """Delete a subscription."""

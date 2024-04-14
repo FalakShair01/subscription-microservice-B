@@ -27,12 +27,11 @@ async def create_subscription(request: schema.SubscriptionBase, db: Session = De
     return subscription_service.create_subscription(db, email=request.email, is_active=request.is_active)
 
 @router.put('/subscriptions/{subscription_id}', response_model=schema.Subscription, summary="Update a subscription")
-async def update_subscription(subscription_id: int, request: schema.SubscriptionBase, db: Session = Depends(get_db)):
+async def update_subscription(subscription_id: int, request: schema.UpdateSubscription, db: Session = Depends(get_db)):
     """
     Update a subscription.
 
     - **subscription_id**: The ID of the subscription to be updated.
-    - **email**: The updated email address of the subscriber.
     - **is_active**: The updated status of the subscription (active or inactive).
 
     Returns:
